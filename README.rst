@@ -23,10 +23,27 @@ Create models with less code.
 * Documentation: https://atmodel.readthedocs.io.
 
 
-Features
---------
+Getting started
+---------------
+Install @model from pip:
 
-* TODO
+   pip install atmodel
+
+
+Using @model is as simple as::
+
+  from atmodel import model
+
+  @model('a', optional=['b'])
+  class Model:
+      pass
+
+Then use the class as::
+
+   m = Model(a=1)
+   if m.a() > 0:
+       n = Model(a=1, b=2)
+
 
 Credits
 -------
