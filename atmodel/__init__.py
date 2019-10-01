@@ -8,7 +8,7 @@ __version__ = '0.1.0'
 
 
 def add_dynamo(klass, param):
-    name = f'__{param}'
+    name = '__' + param
     def innerdynamo(self):
         return self.__dict__[name]
     innerdynamo.__name__ = param
@@ -34,7 +34,7 @@ def model(*params, **mkw):
 
             for param in list(params) + optional:
                 add_dynamo(klass, param)
-                name = f'__{param}'
+                name = '__' + param
                 setattr(self, name, kws[param])
 
         klass.__init__ = new_init
